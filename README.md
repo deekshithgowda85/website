@@ -1,89 +1,66 @@
 # 🔧 Flask Website: Data Structures Visualizer (AVL Tree & HashMap in C)
 
-This is a fully functional **Flask-based website** with an interactive frontend built using **HTML, CSS, and Bootstrap**, which integrates the implementation of two essential data structures — **AVL Tree** and **HashMap**, both written in **C** and connected via the backend.
+This project is a complete **Flask-based website** that demonstrates the implementation of **AVL Tree** and **HashMap** in **C**, with a simple and intuitive frontend using **HTML** and **CSS**. The backend is written in Python using Flask and interacts with a compiled C program (`dsa2.exe`).
 
 ---
 
 ## 🚀 Features
 
-- 🌲 **AVL Tree** Implementation: Insertion, deletion, and traversal
-- 🔑 **HashMap** Implementation: Insert, search, delete operations
-- 🌐 Full stack integration: HTML/CSS frontend, Flask backend, C logic using Python-C bindings
-- 📈 Visual feedback on operations performed on the data structures
-- 💡 Educational: Designed to help understand how these data structures work under the hood
+- 🌲 AVL Tree: Insert, Delete, and Traverse operations
+- 🔑 HashMap: Insert, Search, and Delete operations
+- 🖥️ Web-based interface using Flask
+- 🔗 Python-C integration via `subprocess` or direct execution
+- 🎓 Educational and practical for DSA learners
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML, CSS, Bootstrap
-- **Backend**: Python (Flask)
-- **Core Logic**: C (AVL Tree & HashMap implementation)
-- **Integration**: Python `ctypes` or `cffi` for calling C functions from Flask
+- **Frontend**: HTML, CSS (inside `templates.zip` and `static.zip`)
+- **Backend**: Python with Flask (`server.py`)
+- **Core Logic**: C (`dsa2.c` compiled as `dsa2.exe`)
 
 ---
 
-## 📂 Folder Structure
+## 📁 Project Structure
 
 ```
 project-root/
 │
-├── static/               # CSS files and static assets
-│   └── style.css
-│
-├── templates/            # HTML templates
-│   ├── index.html
-│   └── avl.html
-│   └── hashmap.html
-│
-├── c_code/               # C implementations
-│   ├── avl.c
-│   ├── avl.h
-│   ├── hashmap.c
-│   ├── hashmap.h
-│   └── Makefile
-│
-├── app.py                # Main Flask application
-├── README.md             # Project README
-└── requirements.txt      # Python dependencies
+├── README.md            # Project readme
+├── dsa2.c               # C source file (AVL Tree and HashMap)
+├── dsa2.exe             # Compiled C program
+├── server.py            # Flask backend
+├── static.zip           # CSS and static files (unzip to static/)
+├── templates.zip        # HTML templates (unzip to templates/)
 ```
+
+> 📦 Please unzip `static.zip` to a `static/` folder and `templates.zip` to a `templates/` folder before running.
 
 ---
 
-## 🔄 How to Run the Project
+## ▶️ How to Run
 
-### 📥 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/flask-avl-hashmap-visualizer.git
-cd flask-avl-hashmap-visualizer
-```
-
-### 🧰 2. Install Python Dependencies
+### 1. Unzip the required folders:
 
 ```bash
-pip install -r requirements.txt
+unzip templates.zip -d templates
+unzip static.zip -d static
 ```
 
-### ⚙️ 3. Compile the C Code
+### 2. Install required Python libraries:
 
 ```bash
-cd c_code
-make
-cd ..
+pip install flask
 ```
 
-> This generates shared libraries (e.g., `.so` files) that Flask can call.
-
-### ▶️ 4. Run the Flask Server
+### 3. Run the Flask server:
 
 ```bash
-python app.py
+python server.py
 ```
 
-### 🌐 5. Access the Website
-
-Open your browser and navigate to:
+### 4. Open your browser and go to:
 
 ```
 http://localhost:5000
@@ -91,49 +68,40 @@ http://localhost:5000
 
 ---
 
-## 🔍 Implementation Overview
+## 🔧 How It Works
 
-### ✅ AVL Tree (in C)
-- Self-balancing binary search tree
-- Implemented with:
-  - Rotation logic (LL, RR, LR, RL)
-  - Node insertion and deletion
-  - Height and balance factor tracking
-
-### ✅ HashMap (in C)
-- Uses separate chaining with linked lists
-- Implements:
-  - Hash function for string/integer keys
-  - Insert, search, and delete operations
-  - Dynamic resizing optional
+- User input is received via HTML forms in `templates/`
+- Flask handles requests in `server.py`
+- Backend executes the C binary (`dsa2.exe`) with required input
+- Output from the C program is captured and returned to the user
 
 ---
 
-## 📸 Screenshots (Add your screenshots here)
+## 🧠 Educational Purpose
 
-| Homepage | AVL Tree | HashMap |
-|----------|----------|---------|
-| ![home](screenshots/home.png) | ![avl](screenshots/avl.png) | ![hash](screenshots/hashmap.png) |
+This project demonstrates how:
+
+- Low-level C code can be reused in high-level web applications
+- Web interfaces can make learning DSA more interactive
+- Python can integrate with compiled binaries (e.g., using `subprocess.run()`)
 
 ---
 
-## 🧠 Educational Use
+## 📸 Screenshots (optional)
 
-This project is designed for learning purposes to:
-
-- Visualize how data structures behave
-- Understand Python <--> C integration
-- Build full stack apps with low-level computation
+| Home | AVL Tree | HashMap |
+|------|----------|---------|
+| *(Add screenshots here)* | *(Add AVL interface screenshot)* | *(Add HashMap interface screenshot)* |
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is provided for educational purposes. You may modify and use it as needed.
 
 ---
 
-## 👨‍💻 Author
+## 👤 Author
 
 **Deekshith Gowda H. S**  
-Feel free to connect or contribute!
+Reach out for collaboration or improvements!
